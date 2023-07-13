@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: lan-day-off-net
+  namespace: default
+spec:
+  secretName: lan-day-off-net-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.lan.day-off.net"
+  dnsNames:
+  - "lan.day-off.net"
+  - "*.lan.day-off.net"
